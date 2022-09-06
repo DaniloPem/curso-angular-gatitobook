@@ -16,6 +16,15 @@
             animal.likes
           }}</i>
         </small>
+
+        <app-comentarios
+          [id]="animalId"
+          *ngIf="animal.allowComments; else warning"
+        ></app-comentarios>
+
+        <ng-template #warning>
+          <p>Usuário nao pode comentar</p>
+        </ng-template>
       </div>
     </div>
   </div>
