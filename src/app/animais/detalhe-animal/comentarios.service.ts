@@ -1,4 +1,4 @@
-import { Comentarios } from './comentarios';
+import { Comentario, Comentarios } from './comentarios';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment.prod';
