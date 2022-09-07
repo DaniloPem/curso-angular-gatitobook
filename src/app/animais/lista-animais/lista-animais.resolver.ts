@@ -7,7 +7,7 @@ import {
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable, of, switchMap, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,8 @@ export class ListaAnimaisResolver implements Resolve<Animais> {
       switchMap((usuario) => {
         const userName = usuario.name ?? '';
         return this.animaisService.listaDoUsuario(userName);
-      })
+      }),
+      take(1)
     );
   }
 }
